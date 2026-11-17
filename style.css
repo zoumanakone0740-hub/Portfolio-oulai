@@ -1,0 +1,487 @@
+/* =====================================
+   1. PARAMÈTRES GÉNÉRAUX
+===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f7f8f3;
+    color: #263b2d;
+    line-height: 1.7;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* =====================================
+   2. EN-TÊTE
+===================================== */
+
+.site-header {
+    min-height: 85px;
+    padding: 15px 7%;
+    background: #123b2a;
+    color: white;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.main-nav a {
+    color: white;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.main-nav a:hover {
+    color: #b7d9a8;
+}
+
+.menu-toggle {
+    display: none;
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+
+/* =====================================
+   3. ACCUEIL ET IMAGE DE FOND
+===================================== */
+
+.hero {
+    min-height: 620px;
+    padding: 100px 10%;
+
+    display: flex;
+    align-items: center;
+
+    color: white;
+
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(8, 35, 23, 0.94),
+            rgba(18, 59, 42, 0.72),
+            rgba(18, 59, 42, 0.35)
+        ),
+        url("https://images.unsplash.com/photo-1621146027714-e8921770f8d0?auto=format&fit=crop&w=2000&q=85");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero-label {
+    color: #c1dda9;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero h2 {
+    color: #d4e6c8;
+    font-size: 27px;
+    font-weight: normal;
+    margin-bottom: 25px;
+}
+
+.hero-content > p:not(.hero-label) {
+    max-width: 680px;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.primary-button {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 14px 28px;
+
+    background: #d2e6bd;
+    color: #123b2a;
+
+    border-radius: 5px;
+    font-weight: bold;
+
+    transition: background 0.3s, transform 0.3s;
+}
+
+.primary-button:hover {
+    background: white;
+    transform: translateY(-3px);
+}
+
+
+/* =====================================
+   4. SECTIONS GÉNÉRALES
+===================================== */
+
+.section-content {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.about-section,
+.skills-section,
+.education-section,
+.contact-section {
+    padding: 85px 10%;
+}
+
+section h2 {
+    color: #20543a;
+    font-size: 32px;
+    margin-bottom: 25px;
+}
+
+.section-label {
+    color: #73966a;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+
+/* =====================================
+   5. À PROPOS
+===================================== */
+
+.about-section {
+    background: #f7f8f3;
+}
+
+.about-section p:not(.section-label) {
+    max-width: 850px;
+    margin-bottom: 18px;
+    font-size: 16px;
+}
+
+
+/* =====================================
+   6. COMPÉTENCES
+===================================== */
+
+.skills-section {
+    background: #eaf0e5;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin-top: 35px;
+}
+
+.skill-card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(18, 59, 42, 0.07);
+    transition: transform 0.3s;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+}
+
+.skill-icon {
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.skill-card h3 {
+    color: #20543a;
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.skill-card p {
+    color: #526456;
+    font-size: 15px;
+}
+
+
+/* =====================================
+   7. FORMATION
+===================================== */
+
+.education-section {
+    background: #f0f2eb;
+}
+
+.timeline {
+    margin-top: 35px;
+    border-left: 3px solid #73966a;
+    padding-left: 30px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 35px;
+}
+
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -39px;
+    top: 8px;
+    width: 13px;
+    height: 13px;
+    background: #326849;
+    border: 3px solid #f0f2eb;
+    border-radius: 50%;
+}
+
+.timeline-date {
+    display: inline-block;
+    color: #73966a;
+    font-weight: bold;
+    margin-bottom: 7px;
+}
+
+.timeline-item h3 {
+    color: #263b2d;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.timeline-item p {
+    color: #66816a;
+    font-size: 14px;
+}
+
+
+/* =====================================
+   8. CONTACT
+===================================== */
+
+.contact-section {
+    background: #eaf0e5;
+}
+
+.contact-section .section-content > p:not(.section-label) {
+    max-width: 750px;
+    margin-bottom: 25px;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.contact-details a {
+    color: #20543a;
+    font-weight: bold;
+    width: fit-content;
+    overflow-wrap: anywhere;
+    transition: color 0.3s;
+}
+
+.contact-details a:hover {
+    color: #73966a;
+}
+
+
+/* =====================================
+   9. PIED DE PAGE
+===================================== */
+
+.site-footer {
+    background: #123b2a;
+    color: white;
+    text-align: center;
+    padding: 30px 15px;
+}
+
+.site-footer p {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+
+/* =====================================
+   10. TABLETTES
+===================================== */
+
+@media (max-width: 900px) {
+
+    .site-header {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .main-nav {
+        gap: 15px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .about-section,
+    .skills-section,
+    .education-section,
+    .contact-section {
+        padding-left: 7%;
+        padding-right: 7%;
+    }
+}
+
+
+/* =====================================
+   11. TÉLÉPHONES
+===================================== */
+
+@media (max-width: 600px) {
+
+    .site-header {
+        min-height: 75px;
+        padding: 12px 7%;
+        position: sticky;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .menu-toggle {
+        display: block;
+        order: 2;
+    }
+
+    .logo {
+        order: 1;
+        font-size: 22px;
+    }
+
+    .main-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+
+        background: #123b2a;
+
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+
+        padding: 10px 0;
+    }
+
+    .main-nav.active {
+        display: flex;
+    }
+
+    .main-nav a {
+        width: 100%;
+        text-align: center;
+        padding: 12px;
+        border-top: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .hero {
+        min-height: 570px;
+        padding: 70px 7%;
+        background-position: center;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .hero h2 {
+        font-size: 22px;
+    }
+
+    .hero-content > p:not(.hero-label) {
+        font-size: 15px;
+    }
+
+    .hero-label {
+        font-size: 11px;
+        letter-spacing: 2px;
+    }
+
+    .about-section,
+    .skills-section,
+    .education-section,
+    .contact-section {
+        padding: 60px 7%;
+    }
+
+    section h2 {
+        font-size: 27px;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .skill-card {
+        padding: 25px;
+    }
+
+    .timeline {
+        padding-left: 25px;
+    }
+
+    .timeline-item::before {
+        left: -34px;
+    }
+
+    .timeline-item h3 {
+        font-size: 16px;
+    }
+
+    .site-footer p {
+        font-size: 12px;
+    }
+}
